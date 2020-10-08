@@ -52,11 +52,10 @@ ActiveRecord::Schema.define(version: 2020_10_06_220837) do
     t.string "password_digest"
     t.string "sex"
     t.float "weight"
-    t.float "height"
+    t.integer "height"
     t.float "bodyfat"
     t.integer "age"
     t.string "goal"
-    t.string "activity_level"
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

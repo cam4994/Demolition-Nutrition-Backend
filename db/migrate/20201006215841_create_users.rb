@@ -5,11 +5,10 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :password_digest
       t.string :sex
       t.float :weight
-      t.float :height
+      t.integer :height
       t.float :bodyfat
       t.integer :age
       t.string :goal
-      t.string :activity_level
       t.string :image
 
       t.timestamps

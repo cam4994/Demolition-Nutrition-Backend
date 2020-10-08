@@ -4,19 +4,19 @@ class SessionsController < ApplicationController
         user = User.find_by(username: params[:username])
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
-            redirect_to user_path(user)
+            puts "After logging in"
+            puts current_user
+            render json: { user: user}, status: :accepted
         else
             if user == nil 
-                error = "That user does not exist." 
+                render json: { error: ["That user does not exist." ] }, status: :unauthorized
             else
-                error = "Password is incorrect."
+                render json: { error: ["Password is incorrect" ] }, status: :unauthorized
             end
-            render 'new'
         end
     end
 
     def destroy
         session.delete :user_id
-        redirect_to '/'
     end
 end
