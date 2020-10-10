@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             puts "After logging in"
             puts current_user
-            render json: { user: user}, status: :accepted
+            render json: user, status: :accepted
         else
             if user == nil 
                 render json: { error: ["That user does not exist." ] }, status: :unauthorized

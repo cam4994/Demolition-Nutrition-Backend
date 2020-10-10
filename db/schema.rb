@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2020_10_06_220837) do
   create_table "entries", force: :cascade do |t|
     t.integer "journal_id"
     t.integer "meal_id"
+    t.string "category"
+    t.float "servings"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -30,7 +32,7 @@ ActiveRecord::Schema.define(version: 2020_10_06_220837) do
   end
 
   create_table "journals", force: :cascade do |t|
-    t.date "date"
+    t.string "date"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
