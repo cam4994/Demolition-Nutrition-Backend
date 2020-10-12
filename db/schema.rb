@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_10_06_220837) do
   end
 
   create_table "exercises", force: :cascade do |t|
-    t.string "type"
+    t.string "name"
     t.float "met"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 2020_10_06_220837) do
     t.integer "exercise_id"
     t.integer "journal_id"
     t.float "duration"
+    t.float "calories"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

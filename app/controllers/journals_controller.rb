@@ -10,8 +10,12 @@ class JournalsController < ApplicationController
 
     def show 
         journal = Journal.find(params[:id])
-        # render json: [journal.entries, journal.meals]
         puts journal.entries_and_meals
         render json: journal.entries_and_meals
+    end
+
+    def workouts
+        journal = Journal.find(params[:id])
+        render json: journal.workouts_with_name_of_exercise
     end
 end

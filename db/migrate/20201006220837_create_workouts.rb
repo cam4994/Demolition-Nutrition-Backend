@@ -4,6 +4,7 @@ class CreateWorkouts < ActiveRecord::Migration[6.0]
       t.integer :exercise_id
       t.integer :journal_id
       t.float :duration
+      t.float :calories
 
       t.timestamps
     end

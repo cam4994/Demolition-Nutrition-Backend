@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   resources :exercises
   resources :meals
   resources :entries
-  resources :journals
+  resources :journals, only: [:index, :show, :create, :update, :delete]
   resources :users
   get '/current', to: 'users#current'
+  get '/journals/:id/workouts', to: 'journals#workouts'
   post '/login', to: 'sessions#create'
   delete '/signout', to: 'sessions#destroy'
 end

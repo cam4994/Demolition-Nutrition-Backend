@@ -20,4 +20,15 @@ class Journal < ApplicationRecord
         return entries_and_meals
     end
 
+    def workouts_with_name_of_exercise
+        self.workouts.map do |workout|
+            {
+                duration: workout.duration, 
+                calories: workout.calories, 
+                name: workout.exercise.name, 
+                met: workout.exercise.met
+            }
+        end
+    end
+
 end
