@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resources :entries
   resources :journals, only: [:index, :show, :create, :update, :delete]
   resources :users
-  get '/current', to: 'users#current'
   get '/journals/:id/workouts', to: 'journals#workouts'
-  post '/login', to: 'sessions#create'
-  delete '/signout', to: 'sessions#destroy'
+  post '/login', to: 'auth#login'
+  get '/auto_login', to: 'auth#auto_login'
+
 end
