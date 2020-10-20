@@ -8,4 +8,9 @@ class WorkoutsController < ApplicationController
             render json: { error: workout.errors.full_messages }, status: :not_acceptable
         end
     end
+
+    def destroy
+        workout = Workout.find(params[:id])
+        workout.destroy
+    end
 end

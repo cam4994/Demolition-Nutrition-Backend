@@ -14,7 +14,8 @@ class Journal < ApplicationRecord
                 calories: entry.meal.calories, 
                 carbs: entry.meal.carbs, 
                 protein: entry.meal.protein, 
-                fat: entry.meal.fat
+                fat: entry.meal.fat, 
+                entry_id: entry.id
             }
         end
         return entries_and_meals
@@ -26,7 +27,8 @@ class Journal < ApplicationRecord
                 duration: workout.duration, 
                 calories: workout.calories, 
                 name: workout.exercise.name, 
-                met: workout.exercise.met
+                met: workout.exercise.met, 
+                workout_id: workout.id
             }
         end
     end

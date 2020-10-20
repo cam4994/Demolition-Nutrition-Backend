@@ -8,4 +8,9 @@ class EntriesController < ApplicationController
             render json: { error: entry.errors.full_messages }, status: :not_acceptable
         end
     end
+
+    def destroy
+        entry = Entry.find(params[:id])
+        entry.destroy
+    end
 end
