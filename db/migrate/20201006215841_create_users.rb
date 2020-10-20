@@ -9,7 +9,6 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.float :bodyfat
       t.integer :age
       t.string :goal
-      t.string :image
 
       t.timestamps
     end

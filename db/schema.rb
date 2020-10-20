@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 2020_10_06_220837) do
     t.float "bodyfat"
     t.integer "age"
     t.string "goal"
-    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

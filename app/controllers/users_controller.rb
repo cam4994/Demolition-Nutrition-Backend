@@ -9,7 +9,7 @@ class UsersController < ApplicationController
             token = encode_token(payload)
             render json: {user: user, jwt: token}, status: :created
         else
-            render json: { error: user.errors.full_messages }, status: :not_acceptable
+            render json: { errors: user.errors.full_messages }, status: :not_acceptable
         end
     end
 
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
 
     def user_params 
         params.permit(:username, :password, :password_confirmation, 
-        :weight, :height, :bodyfat, :age, :sex, :goal, :image)
+        :weight, :height, :bodyfat, :age, :sex, :goal)
     end
 
     def update_params

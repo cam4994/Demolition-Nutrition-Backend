@@ -8,9 +8,9 @@ class AuthController < ApplicationController
             render json: {user: user, jwt: token}, status: :accepted
         else
             if user == nil 
-                render json: { error: ["That user does not exist." ] }, status: :unauthorized
+                render json: { errors: ["That user does not exist." ] }, status: :unauthorized
             else
-                render json: { error: ["Password is incorrect" ] }, status: :unauthorized
+                render json: { errors: ["Password is incorrect" ] }, status: :unauthorized
             end
         end
     end

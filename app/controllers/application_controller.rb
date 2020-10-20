@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   skip_forgery_protection
 
   def encode_token(payload)
-    JWT.encode(payload, 'mosbr0s')
+    JWT.encode(payload, ENV["SECRET_API_KEY"])
   end
 
   def auth_header 
@@ -14,9 +14,8 @@ class ApplicationController < ActionController::Base
   def decoded_token 
     if auth_header 
       token = auth_header.split(' ')[1]
-      # puts ENV['SECRET_KEY']
       begin 
-        JWT.decode(token, 'mosbr0s', true, algorithm: 'HS256')
+        JWT.decode(token, ENV["SECRET_API_KEY"], true, algorithm: 'HS256')
       rescue JWT::DecodeError
         []
       end
