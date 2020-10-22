@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-  # before_action :require_login
-  # skip_forgery_protection
+  before_action :require_login
+  skip_forgery_protection
 
   def encode_token(payload)
     JWT.encode(payload, ENV["SECRET_API_KEY"])
